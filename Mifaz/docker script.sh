@@ -1,0 +1,1 @@
+﻿docker exec -i mysql-container mysql -uuser -ppassword name_db < mifaz.sql

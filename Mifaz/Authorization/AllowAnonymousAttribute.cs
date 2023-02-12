@@ -1,5 +1,4 @@
-﻿namespace Mifaz.Authorization; 
+﻿namespace Mifaz.Authorization;
 
-public class AllowAnonymousAttribute {
-    
-}
+[AttributeUsage(AttributeTargets.Method)]
+public class AllowAnonymousAttribute : Attribute { }

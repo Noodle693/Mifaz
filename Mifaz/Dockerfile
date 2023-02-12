@@ -1,20 +1,10 @@
-﻿FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
+﻿FROM mcr.microsoft.com/dotnet/sdk:6.0 AS sdk
 WORKDIR /app
-EXPOSE 80
-EXPOSE 443
 
-FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
-WORKDIR /src
-COPY ["Mifaz/Mifaz.csproj", "Mifaz/"]
-RUN dotnet restore "Mifaz/Mifaz.csproj"
-COPY . .
-WORKDIR "/src/Mifaz"
-RUN dotnet build "Mifaz.csproj" -c Release -o /app/build
+COPY ./ ./
+RUN dotnet publish -c Release -o out
 
-FROM build AS publish
-RUN dotnet publish "Mifaz.csproj" -c Release -o /app/publish
-
-FROM base AS final
+FROM mcr.microsoft.com/dotnet/aspnet:6.0
 WORKDIR /app
-COPY --from=publish /app/publish .
+COPY --from=sdk /app/out .
 ENTRYPOINT ["dotnet", "Mifaz.dll"]
