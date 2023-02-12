@@ -9,7 +9,7 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "8081:80"
+      - "8081:5555"
     depends_on:
       - db
   
