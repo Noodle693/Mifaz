@@ -6,9 +6,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="261e46e9-f914-4806-93e7-dcc641934466" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Mifaz.sln.DotSettings" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mifaz/ApiModels/CreateRideRequest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mifaz/ApiModels/CreateRideUserAssociationRequest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mifaz/Controllers/RideUserAssociationsController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mifaz/Controllers/RidesController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mifaz/Models/Ride.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mifaz/Models/RideUserAssociation.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mifaz/Services/RideService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mifaz/Services/RideUserAssociationService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Mifaz/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Mifaz/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Mifaz/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Mifaz/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mifaz/ApiModels/AuthUserRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Mifaz/ApiModels/AuthUserRequest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mifaz/ApiModels/CreateUserRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Mifaz/ApiModels/CreateUserRequest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mifaz/Authorization/AllowAnonymousAttribute.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Mifaz/Authorization/AllowAnonymousAttribute.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mifaz/Authorization/AuthorizeAttribute.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Mifaz/Authorization/AuthorizeAttribute.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mifaz/Authorization/BasicAuthMiddleware.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Mifaz/Authorization/BasicAuthMiddleware.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mifaz/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Mifaz/Controllers/UsersController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mifaz/Database/MifazDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Mifaz/Database/MifazDbContext.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Mifaz/Mifaz.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Mifaz/Mifaz.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mifaz/Models/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Mifaz/Models/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mifaz/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Mifaz/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mifaz/Services/PasswordHashingService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Mifaz/Services/PasswordHashingService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mifaz/Services/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Mifaz/Services/UserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mifaz/db-init/mifaz.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Mifaz/db-init/mifaz.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Mifaz/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Mifaz/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,7 +63,6 @@
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "settings.editor.selected.configurable": "SolutionBuilderGeneralOptionsPage",
     "vue.rearranger.settings.migration": "true"
@@ -90,6 +109,15 @@
         <option name="Build" />
       </method>
     </configuration>
+    <configuration name="Mifaz: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="Mifaz/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isPublishEnabled="true" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -104,7 +132,9 @@
       <workItem from="1676198651035" duration="8635000" />
       <workItem from="1676233411162" duration="479000" />
       <workItem from="1676233901206" duration="43000" />
-      <workItem from="1676233975298" duration="3471000" />
+      <workItem from="1676233975298" duration="4505000" />
+      <workItem from="1676310593323" duration="631000" />
+      <workItem from="1676312035500" duration="8772000" />
     </task>
     <servers />
   </component>

@@ -10,9 +10,11 @@ services.AddCors();
 services.AddControllers();
 services.AddScoped(_ => new PasswordHashingService());
 services.AddScoped<IUserService, UserService>();
+services.AddScoped<IRideService, RideService>();
+services.AddScoped<IRideUserAssociationService, RideUserAssociationService>();
 services.AddEntityFrameworkMySQL()
-        .AddDbContext<MifazDbContext>(options => options.UseMySQL(builder.Configuration.GetConnectionString("Default") ??
-                                                                  throw new InvalidOperationException()));
+    .AddDbContext<MifazDbContext>(options => options.UseMySQL(builder.Configuration.GetConnectionString("Default") ??
+                                                              throw new InvalidOperationException()));
 services.AddSwaggerGen();
 services.AddDatabaseDeveloperPageExceptionFilter();
 var app = builder.Build();

@@ -2,7 +2,8 @@
 
 namespace Mifaz.Services;
 
-public class PasswordHashingService {
+public class PasswordHashingService
+{
     /// <summary>
     ///     Size of salt.
     /// </summary>
@@ -19,7 +20,8 @@ public class PasswordHashingService {
     /// <param name="password">The password.</param>
     /// <param name="iterations">Number of iterations.</param>
     /// <returns>The hash.</returns>
-    private string Hash(string password, int iterations) {
+    private string Hash(string password, int iterations)
+    {
         // Create salt
         byte[] salt;
         Random.Shared.NextBytes(salt = new byte[SaltSize]);
@@ -45,7 +47,8 @@ public class PasswordHashingService {
     /// </summary>
     /// <param name="password">The password.</param>
     /// <returns>The hash.</returns>
-    public string Hash(string password) {
+    public string Hash(string password)
+    {
         return Hash(password, 10000);
     }
 
@@ -54,7 +57,8 @@ public class PasswordHashingService {
     /// </summary>
     /// <param name="hashString">The hash.</param>
     /// <returns>Is supported?</returns>
-    private bool IsHashSupported(string hashString) {
+    private bool IsHashSupported(string hashString)
+    {
         return hashString.Contains("$MYHASH$V1$");
     }
 
@@ -64,7 +68,8 @@ public class PasswordHashingService {
     /// <param name="password">The password.</param>
     /// <param name="hashedPassword">The hash.</param>
     /// <returns>Could be verified?</returns>
-    public bool Verify(string password, string hashedPassword) {
+    public bool Verify(string password, string hashedPassword)
+    {
         // Check hash
         if (!IsHashSupported(hashedPassword))
             throw new NotSupportedException("The hashtype is not supported");
