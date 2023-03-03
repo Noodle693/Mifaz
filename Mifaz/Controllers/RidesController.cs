@@ -20,8 +20,8 @@ public class RidesController : ControllerBase
     [HttpPost("create")]
     public async Task<IActionResult> CreateRide([FromBody] CreateRideRequest request, CancellationToken token)
     {
-        var ride = await _rideService.CreateRide(request.DriverId, request.Price, request.StartingDate,
-            request.EndingDate, request.StartingCity, request.DestinationCity, token);
+        var ride = await _rideService.CreateRide(request.DriverId, request.Price, request.Date,
+            request.Origin, request.Destination, token);
         return Ok(ride);
     }
 

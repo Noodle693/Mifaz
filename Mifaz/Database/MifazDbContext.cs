@@ -19,20 +19,20 @@ public class MifazDbContext : DbContext
     public virtual DbSet<Ride> Rides { get; set; }
     public virtual DbSet<RideUserAssociation> RideUserAssociations { get; set; }
 
-    public async Task<User> CreateUser(string username, string password, string phone, CancellationToken token)
+    public async Task<User> CreateUser(string username, string password, string firstName, string lastName, string phone, CancellationToken token)
     {
-        if (await Users.FirstOrDefaultAsync(x => x.Username == username, token) is not null)
+        if (await Users.FirstOrDefaultAsync(x => x.Mail == username, token) is not null)
             throw new ConstraintException("User already exists");
         var hashedPassword = _passwordHashingService.Hash(password);
-        var user = new User { Username = username, Password = hashedPassword, Phone = phone };
+        var user = new User { Mail = username, Password = hashedPassword, FirstName = firstName, LastName = lastName, Phone = phone };
         await Users.AddAsync(user, token);
         await SaveChangesAsync(token);
         return user;
     }
 
-    public async Task<User> GetUser(string username, string password, CancellationToken token)
+    public async Task<User> GetUser(string mail, string password, CancellationToken token)
     {
-        var user = await Users.FirstOrDefaultAsync(x => x.Username == username, token);
+        var user = await Users.FirstOrDefaultAsync(x => x.Mail == mail, token);
         if (_passwordHashingService.Verify(password, user!.Password))
             return user;
         throw new UnauthorizedAccessException();
@@ -43,13 +43,13 @@ public class MifazDbContext : DbContext
         return await Users.ToListAsync(token);
     }
 
-    public async Task<Ride> CreateRide(int driverId, double price, DateTime startingDate,
-        DateTime endingDate, string startingCity, string destinationCity, CancellationToken token)
+    public async Task<Ride> CreateRide(int driverId, double price, DateTime date, string origin, string destination,
+        CancellationToken token)
     {
         var ride = new Ride
         {
-            DriverId = driverId, Price = price, StartingDate = startingDate, EndingDate = endingDate,
-            StartingCity = startingCity, DestinationCity = destinationCity
+            DriverId = driverId, Price = price, Date = date,
+            Origin = origin, Destination = destination
         };
         await Rides.AddAsync(ride, token);
         await SaveChangesAsync(token);

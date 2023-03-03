@@ -21,7 +21,7 @@ public class UsersController : ControllerBase
     [HttpPost("create")]
     public async Task<IActionResult> CreateUser([FromBody] CreateUserRequest request, CancellationToken token)
     {
-        var user = await _userService.CreateUser(request.Username, request.Password, request.Phone, token);
+        var user = await _userService.CreateUser(request.Mail, request.Password, request.FirstName, request.LastName, request.Phone, token);
         return Ok(user);
     }
 
@@ -29,7 +29,7 @@ public class UsersController : ControllerBase
     [HttpPost("authenticate")]
     public async Task<IActionResult> Authenticate([FromBody] AuthUserRequest request, CancellationToken token)
     {
-        var user = await _userService.Authenticate(request.Username, request.Password, token);
+        var user = await _userService.Authenticate(request.Mail, request.Password, token);
         return Ok(user);
     }
 

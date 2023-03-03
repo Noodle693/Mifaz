@@ -5,8 +5,8 @@ namespace Mifaz.Services;
 
 public interface IRideService
 {
-    Task<Ride> CreateRide(int driverId, double price, DateTime startingDate,
-        DateTime endingDate, string startingCity, string destinationCity, CancellationToken token);
+    Task<Ride> CreateRide(int driverId, double price, DateTime date, string origin, string destination,
+        CancellationToken token);
 
     Task<IEnumerable<Ride>> GetAll(CancellationToken token);
 }
@@ -20,11 +20,11 @@ public class RideService : IRideService
         _context = context;
     }
 
-    public async Task<Ride> CreateRide(int driverId, double price, DateTime startingDate, DateTime endingDate,
-        string startingCity,
-        string destinationCity, CancellationToken token)
+    public async Task<Ride> CreateRide(int driverId, double price, DateTime date,
+        string origin,
+        string destination, CancellationToken token)
     {
-        return await _context.CreateRide(driverId, price, startingDate, endingDate, startingCity, destinationCity,
+        return await _context.CreateRide(driverId, price, date, origin, destination,
             token);
     }
 
