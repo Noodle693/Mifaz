@@ -6,17 +6,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="261e46e9-f914-4806-93e7-dcc641934466" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Mifaz/ApiModels/AuthUserResponse.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mifaz/ApiModels/CreateRideResponse.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mifaz/ApiModels/CreateUserResponse.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mifaz/ApiModels/GetRidesRequest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mifaz/ApiModels/GetRidesResponse.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mifaz/ApiModels/ResetPasswordRequest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mifaz/ApiModels/ResetPasswordResponse.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mifaz/ApiModels/ResponseModels/ResponseRide.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Mifaz/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Mifaz/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Mifaz/ApiModels/AuthUserRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Mifaz/ApiModels/AuthUserRequest.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Mifaz/ApiModels/CreateRideRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Mifaz/ApiModels/CreateRideRequest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Mifaz/ApiModels/CreateUserRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Mifaz/ApiModels/CreateUserRequest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mifaz/ApiModels/CreateRideUserAssociationRequest.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mifaz/Authorization/AuthorizeAttribute.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Mifaz/Authorization/AuthorizeAttribute.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mifaz/Authorization/BasicAuthMiddleware.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Mifaz/Authorization/BasicAuthMiddleware.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mifaz/Controllers/RideUserAssociationsController.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Mifaz/Controllers/RidesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Mifaz/Controllers/RidesController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Mifaz/Controllers/UsersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Mifaz/Controllers/UsersController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Mifaz/Database/MifazDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Mifaz/Database/MifazDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mifaz/Mifaz.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Mifaz/Mifaz.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Mifaz/Models/Ride.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Mifaz/Models/Ride.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Mifaz/Models/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Mifaz/Models/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mifaz/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Mifaz/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Mifaz/Services/RideService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Mifaz/Services/RideService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mifaz/Services/RideUserAssociationService.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Mifaz/Services/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Mifaz/Services/UserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mifaz/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Mifaz/appsettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Mifaz/db-init/mifaz.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Mifaz/db-init/mifaz.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,9 +44,23 @@
       </list>
     </option>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/0f1f87a17c797c7aefb5c86e8db586a9951c8e58b31f2c42ba39dd51ffa0/CallSiteFactory.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/19ba5a289f2afd3f4d5e862cb3f3efee6181683a31ee31b86c2298b1f51114b/ServiceProvider.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4d2be9efd4ebfd211509aec1b3bab251629992aa0e9248963cc162b2c237a/AuthenticationHeaderValue.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/50cc18e5ad5c509ed364a7e04b1743bcd4f2d61cb9d54f6236a2247041e/DefaultHttpContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7260f0fb7fbdeebcce4a29db2b46a2e6da8327cf66f559ae841772c64bccf6/IDataProtectionProvider.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/85444b87515266794f71448c4f4bd6c1bde1cbd93fe1721b9221ae0dd4ebc93/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b1e022d6ee7a918372335fba4d1e729f8a03a41c3b2a395a74bda5326da9daf/AuthorizationMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/bf9021a960b74107a7e141aa06bc9d8a0a53c929178c2fb95b1597be8af8dc/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/dc36d71182458cfd07b27111111c6240c361df2dd0cc43d8d7e9183417796b/ItemsDictionary.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e8543ffb77c8f8a82ffb2b55a2e1cb75a9e6af686b9d965284162e317d425c/ResourceInvoker.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ed6d3cfce28a908e474af54c42b83e78339f233df99419dd2cce16aa8c2d7a0/AsyncValueTaskMethodBuilderT.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -45,27 +72,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;SolutionBuilderGeneralOptionsPage&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "XThreadsFramesViewSplitterKey": "0.5519849",
+    "settings.editor.selected.configurable": "SolutionBuilderGeneralOptionsPage",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;sqlserver&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "sqlserver"
     ],
-    &quot;rider.external.source.directories&quot;: [
-      &quot;/home/lev/.var/app/com.jetbrains.Rider/config/JetBrains/Rider2022.3/resharper-host/DecompilerCache&quot;,
-      &quot;/home/lev/.var/app/com.jetbrains.Rider/config/JetBrains/Rider2022.3/resharper-host/SourcesCache&quot;,
-      &quot;/home/lev/.var/app/com.jetbrains.Rider/data/Symbols/src&quot;
+    "rider.external.source.directories": [
+      "/home/lev/.var/app/com.jetbrains.Rider/config/JetBrains/Rider2022.3/resharper-host/DecompilerCache",
+      "/home/lev/.var/app/com.jetbrains.Rider/config/JetBrains/Rider2022.3/resharper-host/SourcesCache",
+      "/home/lev/.var/app/com.jetbrains.Rider/data/Symbols/src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.Mifaz">
     <configuration name="Mifaz" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Mifaz/Mifaz.csproj" />
@@ -123,17 +151,26 @@
       <workItem from="1676233975298" duration="4505000" />
       <workItem from="1676310593323" duration="631000" />
       <workItem from="1676312035500" duration="8772000" />
-      <workItem from="1677878524360" duration="2576000" />
+      <workItem from="1677878524360" duration="2944000" />
+      <workItem from="1678620973786" duration="22519000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="Type#Microsoft.Extensions.Caching.Distributed.MemoryDistributedCache" memberName="_memCache" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

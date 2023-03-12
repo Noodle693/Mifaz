@@ -18,18 +18,10 @@ public class UsersController : ControllerBase
     }
 
     [AllowAnonymous]
-    [HttpPost("create")]
-    public async Task<IActionResult> CreateUser([FromBody] CreateUserRequest request, CancellationToken token)
-    {
-        var user = await _userService.CreateUser(request.Mail, request.Password, request.FirstName, request.LastName, request.Phone, token);
-        return Ok(user);
-    }
-
-    [AllowAnonymous]
     [HttpPost("authenticate")]
     public async Task<IActionResult> Authenticate([FromBody] AuthUserRequest request, CancellationToken token)
     {
-        var user = await _userService.Authenticate(request.Mail, request.Password, token);
+        var user = await _userService.Authenticate(request, token);
         return Ok(user);
     }
 
@@ -38,5 +30,21 @@ public class UsersController : ControllerBase
     {
         var users = await _userService.GetAll(token);
         return Ok(users);
+    }
+
+    [AllowAnonymous]
+    [HttpPost("create")]
+    public async Task<IActionResult> CreateUser([FromBody] CreateUserRequest request, CancellationToken token)
+    {
+        var user = await _userService.CreateUser(request, token);
+        return Ok(user);
+    }
+
+    [AllowAnonymous]
+    [HttpPost("reset")]
+    public async Task<IActionResult> Reset([FromBody] ResetPasswordRequest request, CancellationToken token)
+    {
+        var result = await _userService.Reset(request, token);
+        return Ok(result);
     }
 }

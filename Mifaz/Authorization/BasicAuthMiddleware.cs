@@ -1,5 +1,6 @@
 ﻿using System.Net.Http.Headers;
 using System.Text;
+using Mifaz.ApiModels;
 using Mifaz.Services;
 
 namespace Mifaz.Authorization;
@@ -22,11 +23,13 @@ public class BasicAuthMiddleware
             {
                 var credentialBytes = Convert.FromBase64String(authHeader.Parameter);
                 var credentials = Encoding.UTF8.GetString(credentialBytes).Split(':', 2);
-                var username = credentials[0];
+                var mail = credentials[0];
                 var password = credentials[1];
 
                 // authenticate credentials with user service and attach user to http context
-                context.Items["User"] = await userService.Authenticate(username, password, context.RequestAborted);
+                context.Items["User"] =
+                    (await userService.Authenticate(
+                        new AuthUserRequest { Mail = mail, Password = password }, context.RequestAborted)).User;
             }
         }
         catch

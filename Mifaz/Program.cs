@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.DataProtection;
 using Microsoft.EntityFrameworkCore;
 using Mifaz.Authorization;
 using Mifaz.Database;
@@ -5,16 +6,19 @@ using Mifaz.Services;
 using MySql.EntityFrameworkCore.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
+
+var port = Environment.GetEnvironmentVariable("PORT") ?? "5555";
+var url = $"http://0.0.0.0:{port}";
+
 var services = builder.Services;
 services.AddCors();
 services.AddControllers();
 services.AddScoped(_ => new PasswordHashingService());
-services.AddScoped<IUserService, UserService>();
-services.AddScoped<IRideService, RideService>();
-services.AddScoped<IRideUserAssociationService, RideUserAssociationService>();
 services.AddEntityFrameworkMySQL()
     .AddDbContext<MifazDbContext>(options => options.UseMySQL(builder.Configuration.GetConnectionString("Default") ??
                                                               throw new InvalidOperationException()));
+services.AddScoped<IUserService, UserService>();
+services.AddScoped<IRideService, RideService>();
 services.AddSwaggerGen();
 services.AddDatabaseDeveloperPageExceptionFilter();
 var app = builder.Build();
@@ -23,4 +27,6 @@ app.UseMiddleware<BasicAuthMiddleware>();
 app.MapControllers();
 app.UseSwagger();
 app.UseSwaggerUI();
-app.Run("http://*:5555");
+app.Run(url);
+
+//mifazdb;rootpw

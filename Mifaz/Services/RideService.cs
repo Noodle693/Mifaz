@@ -1,14 +1,14 @@
+using Mifaz.ApiModels;
 using Mifaz.Database;
-using Mifaz.Models;
 
 namespace Mifaz.Services;
 
 public interface IRideService
 {
-    Task<Ride> CreateRide(int driverId, double price, DateTime date, string origin, string destination,
+    Task<GetRidesResponse> GetAll(CancellationToken token);
+    Task<GetRidesResponse> GetAllForPerson(GetRidesRequest request, CancellationToken token);
+    Task<CreateRideResponse> CreateRide(CreateRideRequest request,
         CancellationToken token);
-
-    Task<IEnumerable<Ride>> GetAll(CancellationToken token);
 }
 
 public class RideService : IRideService
@@ -20,16 +20,20 @@ public class RideService : IRideService
         _context = context;
     }
 
-    public async Task<Ride> CreateRide(int driverId, double price, DateTime date,
-        string origin,
-        string destination, CancellationToken token)
+    public async Task<GetRidesResponse> GetAll(CancellationToken token)
     {
-        return await _context.CreateRide(driverId, price, date, origin, destination,
-            token);
+        return new GetRidesResponse((await _context.GetRides(0, false, token)).ToList());
     }
 
-    public async Task<IEnumerable<Ride>> GetAll(CancellationToken token)
+    public async Task<GetRidesResponse> GetAllForPerson(GetRidesRequest request, CancellationToken token)
     {
-        return await _context.GetRides(token);
+        return new GetRidesResponse((await _context.GetRides(request.PersonId, request.IsDriver, token)).ToList());
+    }
+
+    public async Task<CreateRideResponse> CreateRide(CreateRideRequest request, CancellationToken token)
+    {
+        return new CreateRideResponse(await _context.CreateRide(request.DriverId, request.Origin, request.Destination,
+            request.Date, request.MaxCount,
+            request.Cost, token));
     }
 }
